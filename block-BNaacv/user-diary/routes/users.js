@@ -27,6 +27,10 @@ router.delete("/:id", (req, res) => {
   res.send("User Deleted");
 });
 
+router.get("/:id/edit", (req, res) => {
+  res.render();
+});
+
 router.put("/:id", (req, res) => {
   res.send("user updated");
 });
