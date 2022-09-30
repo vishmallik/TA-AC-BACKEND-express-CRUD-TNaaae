@@ -1,7 +1,5 @@
-const exp = require("constants");
 const express = require("express");
 const path = require("path");
-const { nextTick } = require("process");
 
 const studentRoute = require("./routes/students");
 
@@ -22,6 +20,12 @@ app.get("/", (req, res) => {
   res.render("index", { name: "visawjeet" });
 });
 
+app.use((req, res, next) => {
+  res.status(404).send("Page Not Found");
+});
+app.use((err, req, res, next) => {
+  res.status(500).send(err);
+});
 app.listen(4000, () => {
   console.log("server listening on port 4000");
 });
