@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <title>UserForm</title>
+</head>
+
+<body>
+    <header>
+        <h1>User Update Form</h1>
+    </header>
+    <main>
+        <form style="display: flex; flex-direction: column; max-width: 30%; padding: 16px 0px;"
+            action="/users/<%=user._id%>" method="POST">
+            <input type="text" name="name" placeholder="name" value="<%=user.name%>">
+            <input type="email" name="email" placeholder="email" value="<%=user.email%>">
+            <input type="number" name="age" placeholder="age" value="<%=user.age%>">
+            <input type="submit" value="Update User">
+        </form>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
