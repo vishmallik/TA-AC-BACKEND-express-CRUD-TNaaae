@@ -25,10 +25,8 @@ router.get("/:id", (req, res, next) => {
 });
 
 router.put("/:id", (req, res, next) => {
-  console.log(req.body, req.params.id, typeof req.params.id);
   let id = req.params.id;
   User.findByIdAndUpdate(id, req.body, (err, updatedUser) => {
-    console.log(err, updatedUser);
     if (err) return next(err);
     res.redirect("/users/" + id);
   });
